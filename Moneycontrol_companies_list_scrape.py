@@ -22,6 +22,8 @@ def get_content(url,hdr):
 
 
 def content_html_parse(content_input):
+
+	#parse the web response 
 	soup = BeautifulSoup(content_input,'html.parser')
 
 	return soup
@@ -33,6 +35,8 @@ def content_html_parse(content_input):
 
 
 def get_href(ip):
+
+	#parsing href link from the parsed data
 	temp = ip.split('"')
 	url = ''
 	for i in temp:
@@ -42,6 +46,8 @@ def get_href(ip):
 	return url 
 
 def get_url_prop(url):
+
+	#finging categories and name from the weblink
 	temp = url.split('/')
 	index_ = ''
 
@@ -54,6 +60,8 @@ def get_url_prop(url):
 
 
 def get_comp_details(html_split_data):
+
+	#creating the final dict (Name, category, Url)
 	
 	int_list = []
 
